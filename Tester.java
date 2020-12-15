@@ -2,6 +2,10 @@ import java.util.Arrays;
 import java.util.Random;
 public class Tester {
     public static void main(String[] args) {
+        int[] oneToSix = new int[]{5, 3, 4, 2, 1, 6};
+        Sorts.bubbleSort(oneToSix);
+        System.out.println(Arrays.toString(oneToSix));
+
         Random rng = new Random(24134234);
         int[] nsquared = new int[10000];
         int[] correctsquared = new int[10000];
