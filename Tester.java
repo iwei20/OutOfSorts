@@ -6,7 +6,7 @@ public class Tester {
         Sorts.bubbleSort(oneToSix);
         System.out.println(Arrays.toString(oneToSix));
 
-        Random rng = new Random(24134234);
+        Random rng = new Random();
         int[] nsquared = new int[10000];
         int[] correctsquared = new int[10000];
         for(int i = 0; i < 10000; ++i) {
