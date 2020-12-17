@@ -22,15 +22,16 @@ public class Tester {
         System.out.println("Bubble sort of 10^5 random unsorted: " + time(()->{Sorts.bubbleSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
-        int[] linear = new int[(int)1e7];
-        int[] correctlinear = new int[(int)1e7];
-        for(int i = 0; i < (int)1e7; ++i) {
-            correctlinear[i] = linear[i] = rng.nextInt();
+        int[] linear = new int[(int)1e8];
+        for(int i = 0; i < (int)1e8; ++i) {
+            linear[i] = 10 * i;
         }
-        Arrays.sort(linear);
-        System.out.println("Bubble sort of 10^7 random sorted: " + time(()->{Sorts.bubbleSort(linear);}) + "ms");
-        Arrays.sort(correctlinear);
-        System.out.println(Arrays.equals(linear, correctlinear));
+        System.out.println("Bubble sort of 10^8 random sorted: " + time(()->{Sorts.bubbleSort(linear);}) + "ms");
+        boolean sorted = true;
+        for(int i = 0; i < linear.length - 1; ++i) {
+            if(linear[i] > linear[i + 1]) sorted = false;
+        }
+        System.out.println(sorted);
 
         // oneToSix = new int[]{5, 3, 4, 2, 1, 6};
         // Sorts.selectionSort(oneToSix);
@@ -50,12 +51,11 @@ public class Tester {
         System.out.println("Insertion sort of 10^5 random unsorted: " + time(()->{Sorts.insertionSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
-        for(int i = 0; i < (int)1e7; ++i) {
-            correctlinear[i] = linear[i] = rng.nextInt();
+        System.out.println("Insertion sort of 10^8 random sorted: " + time(()->{Sorts.insertionSort(linear);}) + "ms");
+        sorted = true;
+        for(int i = 0; i < linear.length - 1; ++i) {
+            if(linear[i] > linear[i + 1]) sorted = false;
         }
-        Arrays.sort(linear);
-        System.out.println("Insertion sort of 10^7 random sorted: " + time(()->{Sorts.insertionSort(nsquared);}) + "ms");
-        Arrays.sort(correctlinear);
-        System.out.println(Arrays.equals(linear, correctlinear));
+        System.out.println(sorted);
     }
 }
