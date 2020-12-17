@@ -1,6 +1,12 @@
 import java.util.Arrays;
 import java.util.Random;
 public class Tester {
+    public static long time(Runnable r) {
+        long startTime = System.nanoTime();
+        r.run();
+        long endTime = System.nanoTime();
+        return (endTime - startTime) / 1000000;
+    }
     public static void main(String[] args) {
         int[] oneToSix = new int[]{5, 3, 4, 2, 1, 6};
         Sorts.bubbleSort(oneToSix);
