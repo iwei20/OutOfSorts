@@ -8,9 +8,9 @@ public class Tester {
         return (endTime - startTime) / 1000000;
     }
     public static void main(String[] args) {
-        int[] oneToSix = new int[]{5, 3, 4, 2, 1, 6};
-        Sorts.bubbleSort(oneToSix);
-        System.out.println(Arrays.toString(oneToSix));
+        // int[] oneToSix = new int[]{5, 3, 4, 2, 1, 6};
+        // Sorts.bubbleSort(oneToSix);
+        // System.out.println(Arrays.toString(oneToSix));
 
         Random rng = new Random();
         int[] nsquared = new int[10000];
@@ -32,9 +32,9 @@ public class Tester {
         Arrays.sort(correctlinear);
         System.out.println(Arrays.equals(linear, correctlinear));
 
-        oneToSix = new int[]{5, 3, 4, 2, 1, 6};
-        Sorts.selectionSort(oneToSix);
-        System.out.println(Arrays.toString(oneToSix));
+        // oneToSix = new int[]{5, 3, 4, 2, 1, 6};
+        // Sorts.selectionSort(oneToSix);
+        // System.out.println(Arrays.toString(oneToSix));
 
         for(int i = 0; i < 10000; ++i) {
             correctsquared[i] = nsquared[i] = rng.nextInt();
