@@ -27,7 +27,7 @@ public class Tester {
         for(int i = 0; i < (int)1e8; ++i) {
             linear[i] = 10 * i;
         }
-        System.out.println("Bubble sort of 10^8 random sorted: " + time(()->{Sorts.bubbleSort(linear);}) + "ms");
+        System.out.println("Bubble sort of 10^8 sorted multiples of 10: " + time(()->{Sorts.bubbleSort(linear);}) + "ms");
         boolean sorted = true;
         for(int i = 0; i < linear.length - 1; ++i) {
             if(linear[i] > linear[i + 1]) sorted = false;
@@ -54,7 +54,7 @@ public class Tester {
         System.out.println("Insertion sort of 10^5 random unsorted: " + time(()->{Sorts.insertionSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
-        System.out.println("Insertion sort of 10^8 random sorted: " + time(()->{Sorts.insertionSort(linear);}) + "ms");
+        System.out.println("Insertion sort of 10^8 sorted multiples of 10: " + time(()->{Sorts.insertionSort(linear);}) + "ms");
         sorted = true;
         for(int i = 0; i < linear.length - 1; ++i) {
             if(linear[i] > linear[i + 1]) sorted = false;
