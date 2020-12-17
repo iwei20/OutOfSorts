@@ -12,6 +12,7 @@ public class Tester {
         // Sorts.bubbleSort(oneToSix);
         // System.out.println(Arrays.toString(oneToSix));
 
+        // Bubble sort
         Random rng = new Random();
         int[] nsquared = new int[10000];
         int[] correctsquared = new int[10000];
@@ -37,6 +38,7 @@ public class Tester {
         // Sorts.selectionSort(oneToSix);
         // System.out.println(Arrays.toString(oneToSix));
 
+        // Selection sort
         for(int i = 0; i < 10000; ++i) {
             correctsquared[i] = nsquared[i] = rng.nextInt();
         }
@@ -44,6 +46,7 @@ public class Tester {
         System.out.println("Selection sort of 10^5 random unsorted: " + time(()->{Sorts.selectionSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
+        // Insertion sort
         for(int i = 0; i < 10000; ++i) {
             correctsquared[i] = nsquared[i] = rng.nextInt();
         }
