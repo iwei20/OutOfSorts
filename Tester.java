@@ -45,5 +45,13 @@ public class Tester {
         Sorts.insertionSort(nsquared);
         
         System.out.println(Arrays.equals(nsquared, correctsquared));
+
+        for(int i = 0; i < (int)1e7; ++i) {
+            correctlinear[i] = linear[i] = rng.nextInt();
+        }
+        Arrays.sort(linear);
+        Sorts.insertionSort(linear);
+        Arrays.sort(correctlinear);
+        System.out.println(Arrays.equals(linear, correctlinear));
     }
 }
