@@ -19,7 +19,7 @@ public class Tester {
             correctsquared[i] = nsquared[i] = rng.nextInt();
         }
         Arrays.sort(correctsquared);
-        Sorts.bubbleSort(nsquared);
+        System.out.println("Bubble sort of 10^5 random unsorted: " + time(()->{Sorts.bubbleSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
         int[] linear = new int[(int)1e7];
@@ -28,7 +28,7 @@ public class Tester {
             correctlinear[i] = linear[i] = rng.nextInt();
         }
         Arrays.sort(linear);
-        Sorts.bubbleSort(linear);
+        System.out.println("Bubble sort of 10^7 random sorted: " + time(()->{Sorts.bubbleSort(linear);}) + "ms");
         Arrays.sort(correctlinear);
         System.out.println(Arrays.equals(linear, correctlinear));
 
@@ -40,23 +40,21 @@ public class Tester {
             correctsquared[i] = nsquared[i] = rng.nextInt();
         }
         Arrays.sort(correctsquared);
-        Sorts.selectionSort(nsquared);
-        
+        System.out.println("Selection sort of 10^5 random unsorted: " + time(()->{Sorts.selectionSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
         for(int i = 0; i < 10000; ++i) {
             correctsquared[i] = nsquared[i] = rng.nextInt();
         }
         Arrays.sort(correctsquared);
-        Sorts.insertionSort(nsquared);
-        
+        System.out.println("Insertion sort of 10^5 random unsorted: " + time(()->{Sorts.insertionSort(nsquared);}) + "ms");
         System.out.println(Arrays.equals(nsquared, correctsquared));
 
         for(int i = 0; i < (int)1e7; ++i) {
             correctlinear[i] = linear[i] = rng.nextInt();
         }
         Arrays.sort(linear);
-        Sorts.insertionSort(linear);
+        System.out.println("Insertion sort of 10^7 random sorted: " + time(()->{Sorts.insertionSort(nsquared);}) + "ms");
         Arrays.sort(correctlinear);
         System.out.println(Arrays.equals(linear, correctlinear));
     }
